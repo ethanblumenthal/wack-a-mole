@@ -1,6 +1,4 @@
 var board = document.querySelector('#board');
-var holes = document.querySelectorAll('.hole');
-var start = document.querySelector('#start');
 var score = document.querySelector('#score');
 
 function createGrid() {
@@ -12,19 +10,33 @@ function createGrid() {
 };
 createGrid();
 
-function randomMole() {
-    var mole = holes[Math.floor(Math.random() * holes.length)];    
-    mole.style.background = 'black';
-};
+var holes = document.querySelectorAll('.hole');
+
+function randomInt(num){
+    return Math.floor(Math.random() * num);
+}
+
+function createMole(){
+    holes[randomInt(9)].innerHTML = '<img src="css/mole.png">';
+}
+
+function deleteMole() {
+    holes.forEach(function(e) {
+        e.innerHTML = '';
+    });
+}
 
 start.addEventListener('click', function() {    
-    interval = setInterval(randomMole, 1000);
+    setInterval(createMole, 1000);
+    setInterval(deleteMole, 999);
 });
 
-function updateScore() {
-    var counter = 0;
-    moles.addEventListener('click', function() {
-        counter++;
-        score.innerText = 'SCORE: ' + counter;
+holes.forEach(function(e) {
+    var counter = 0;    
+    e.addEventListener('click', function() {
+        if (e.innerHTML === '<img src="css/mole.png">') {
+            counter++;
+        }
+        score.innerHTML = 'SCORE: ' + counter;
     });
-};
+});
