@@ -1,28 +1,23 @@
+var board = document.querySelector('#board');
+var holes = document.querySelectorAll('.hole');
+
 function createGrid() {
-    for (let i = 0; i < 9; i++) {
-        var space = document.createElement('div');
-        space.className = 'space';
-        space.id = i;        
-        document.getElementById('grid').appendChild(space);
+    for (var i = 0; i < 9; i++) {
+        var hole = document.createElement('div');
+        hole.className = 'hole';
+        hole.id = i;       
+        board.appendChild(hole);
     }
-}
+};
 createGrid();
 
-var space = document.querySelectorAll('space');
-space.forEach(function(e) {
-    var hole = document.createElement('img');
-    hole.setAttribute('src', './images/hole.jpg');
-    e.appendChild(hole);
-});
+// function randomHole() {
+        
+// };
 
-function createMole() {
-    let mole = document.createElement('img');
-    mole.setAttribute('src', './images/mole.jpg');
-    mole.style.position = 'relative';
-    mole.style.zIndex = '+1';
-    mole.id = 'mole';
-    document.body.appendChild(mole);
-}
+// function createMole() {
+    
+// };
 // interval = setInterval(createMole, 1000);
 
 function updateScore() {
@@ -32,5 +27,5 @@ function updateScore() {
         score += 1;
         document.getElementById('score').innerHTML = 'Score: ' + score;
     }
-}
+};
 updateScore();
