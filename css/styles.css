@@ -15,6 +15,13 @@ body {
     vertical-align: top;
 }
 
+#score {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: Cambria, serif;
+    text-align: center;
+}
+
 #board {
     display: inline-block;
     border: 5px solid black;
@@ -22,8 +29,10 @@ body {
     width: 510px;
 }
 
-#score {
-    font-size: 28px;
+#start {
+    display: block; 
+    margin: 10px auto;    
+    font-size: 24px;
     font-weight: bold;
     font-family: Cambria, serif;
     text-align: center;
