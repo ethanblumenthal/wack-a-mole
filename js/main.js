@@ -1,5 +1,7 @@
 var board = document.querySelector('#board');
+var timer = document.querySelector("#timer");
 var score = document.querySelector('#score');
+var time = 10;
 var counter = 0;
 
 function createGrid() {
@@ -28,8 +30,19 @@ function deleteMole() {
 }
 
 start.addEventListener('click', function() {    
-    setInterval(createMole, 500);
-    setInterval(deleteMole, 499);
+    var moleInterval = setInterval(createMole, 600);
+    setInterval(deleteMole, 599);
+    setInterval(startTimer, 1000);
+
+    function startTimer() {
+        time--;
+        timer.innerText = 'TIME: ' + time;
+        if (time <= 0) {
+            clearInterval(moleInterval);            
+            timer.innerText = 'GAME OVER';
+            document.body.style.background = 'red';
+        }
+    };
 });
 
 holes.forEach(function(e) {    

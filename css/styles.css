@@ -4,6 +4,22 @@ body {
     transform: translateX(-50%);
 }
 
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: Cambria, serif;
+    text-align: center;
+}
+
+button {
+    display: block; 
+    margin: 10px auto;    
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Cambria, serif;
+    text-align: center;
+}
+
 .hole {
     display: inline-block;    
     height: 150px; 
@@ -14,25 +30,18 @@ body {
     vertical-align: top;
 }
 
-#score {
-    font-size: 36px;
-    font-weight: bold;
-    font-family: Cambria, serif;
-    text-align: center;
-}
-
 #board {
     display: inline-block;
     border: 5px solid black;
     background: green;
     width: 510px;
+    margin: 0 auto;
 }
 
-#start {
-    display: block; 
-    margin: 10px auto;    
-    font-size: 24px;
-    font-weight: bold;
-    font-family: Cambria, serif;
-    text-align: center;
+#timer {
+    float: left;
+}
+
+#score {
+    float: right;
 }
